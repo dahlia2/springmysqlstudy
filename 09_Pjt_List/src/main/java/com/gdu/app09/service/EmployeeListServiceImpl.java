@@ -92,9 +92,9 @@ public class EmployeeListServiceImpl implements EmployeeListService {
 		
 		// DB로 보낼 Map 만들기
 		Map<String, Object> map = new HashMap<String, Object>();
-                                                // LIMIT #{begin}, #{recordPerPage}
-    map.put("begin", pageUtil.getBegin());      // begin은 0부터 시작한다. (PageUtil.java 참고)
-    map.put("recordPerPage", recordPerPage);    // end 대신 recordPerPage를 전달한다.
+													// LIMIT #{begin}, #{recordPerPage}
+		map.put("begin", pageUtil.getBegin());      // begin은 0부터 시작한다. (PageUtil.java 참고)
+		map.put("recordPerPage", recordPerPage);    // end 대신 recordPerPage를 전달한다.
 		
 		// begin부터 recordPerPage개의 목록 가져오기
 		List<EmpDTO> employees = employeeListMapper.getEmployeeListUsingScroll(map);
